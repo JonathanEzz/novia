@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>San Valentín con Cinnamoroll</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" id="login">
+    <img src="https://i.pinimg.com/originals/ee/6d/15/ee6d15f4dbdecd0d0f5da1a1e84b50f9.png" alt="Cinnamoroll">
+    <h1>¡Inicia sesión o crea una cuenta!</h1>
+    <form onsubmit="handleLogin(event)">
+      <input type="text" placeholder="Usuario" required>
+      <input type="password" placeholder="Contraseña" required>
+      <button type="submit">Iniciar sesión</button>
+    </form>
+  </div>
+
+  <div class="container" id="valentine" style="display: none;">
+    <img src="https://i.pinimg.com/originals/ee/6d/15/ee6d15f4dbdecd0d0f5da1a1e84b50f9.png" alt="Cinnamoroll">
+    <h1>¿Quieres ser mi San Valentín?</h1>
+    <div class="choices">
+      <button class="choice-btn" onclick="sayNo()">No</button>
+      <button class="choice-btn" onclick="sayYes()">Sí</button>
+    </div>
+  </div>
+
+  <div class="container" id="message" style="display: none;">
+    <img src="https://i.pinimg.com/originals/ee/6d/15/ee6d15f4dbdecd0d0f5da1a1e84b50f9.png" alt="Cinnamoroll">
+    <p class="message">Gracias por decir que sí, ahora te amo mucho más &#10084;&#65039;</p>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('valentine').style.display = 'block';
+    }
+
+    function sayNo() {
+      alert('¿Estás seguro? Tal vez cambies de opinión...');
+    }
+
+    function sayYes() {
+      document.getElementById('valentine').style.display = 'none';
+      document.getElementById('message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
